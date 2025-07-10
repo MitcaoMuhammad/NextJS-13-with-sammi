@@ -1,0 +1,15 @@
+import type { Metadata } from 'next'
+
+export default function AboutLayout({
+	children,
+}: {
+	children: React.ReactNode
+}) {
+	return (
+		<section>
+			<p>Start About</p>
+			{children}
+			<p>End About</p>
+		</section>
+	)
+}
