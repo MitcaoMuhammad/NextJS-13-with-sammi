@@ -9,6 +9,7 @@ const Navbar = () => {
 			<button onClick={() => router.push('/')}>Bosh sahifa</button>
 			<button onClick={() => router.push('/about')}>Men haqqimda</button>
 			<button onClick={() => router.push('/contact')}>Bog'lanish </button>
+			<button onClick={() => router.push('/posts')}>Posts </button>
 		</div>
 	)
 }
