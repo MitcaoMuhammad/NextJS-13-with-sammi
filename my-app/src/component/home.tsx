@@ -4,6 +4,7 @@ import { PostType } from '@/inteface'
 import axios from 'axios'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import Text from './text/text'
 
 const Home = () => {
 	const [posts, setPosts] = useState<PostType[]>([])
@@ -32,6 +33,7 @@ const Home = () => {
 							<Link href={c.id}>{c.title}</Link>
 						</div>
 				  ))}
+			<Text text='Hello, this is a sample text component!' />
 		</>
 	)
 }
