@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Fira_Code } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/component/navbar'
+import Provider from './provider'
 
 const fira_code = Fira_Code({ subsets: ['latin'], weight: '400' })
 
@@ -18,9 +19,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={fira_code.className}>
-				<Navbar />
-				{children}
-				<p>Footer</p>
+				<Provider>
+					<Navbar />
+					{children}
+					<p>Footer</p>
+				</Provider>
 			</body>
 		</html>
 	)

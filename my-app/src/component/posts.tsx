@@ -1,8 +1,16 @@
+'use client'
+
 import { PostType } from '@/inteface'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 const Posts: FC<{ data: PostType[] }> = ({ data }) => {
+	const [mounted, setMounted] = useState(false)
+
+	useEffect(() => {
+		setMounted(true)
+	})
+
 	return (
 		<table border={1}>
 			<thead>
