@@ -1,3 +1,4 @@
+import Posts from '@/component/posts'
 import { PostType } from '@/inteface'
 import axios from 'axios'
 import Link from 'next/link'
@@ -18,28 +19,7 @@ const PostsPage = async () => {
 		notFound()
 	}
 
-	return (
-		<>
-			<table border={1}>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Title</th>
-					</tr>
-				</thead>
-				<tbody>
-					{data.map(post => (
-						<tr key={post.id}>
-							<td>{post.id}</td>
-							<td>
-								<Link href={`/posts/${post.id}`}>{post.title}</Link>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-		</>
-	)
+	return <Posts data={data} />
 }
 
 export default PostsPage
