@@ -1,6 +1,7 @@
 import { PostType } from '@/inteface'
 import axios from 'axios'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 async function getData() {
 	const { data } = await axios.get(
@@ -13,9 +14,13 @@ async function getData() {
 const PostsPage = async () => {
 	const data: PostType[] = await getData()
 
+	if (!data || data.length === 0) {
+		notFound()
+	}
+
 	return (
 		<>
-			<table>
+			<table border={1}>
 				<thead>
 					<tr>
 						<th>ID</th>
